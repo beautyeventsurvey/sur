@@ -41,7 +41,7 @@ for (let i = 0; i < options.length; i++) {
       if(window.location.href.indexOf("q2")!=-1){
         document.querySelector('a').href="q3.html";}
       if(window.location.href.indexOf("q3")!=-1){
-        document.querySelector('a').href="login.html";}
+        document.querySelector('a').href="verify.html";}
     };
   });
 }
