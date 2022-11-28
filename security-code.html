@@ -18199,12 +18199,13 @@ screen and (min-resolution:1.5dppx) {
                                                     aria-required="true"
                                                     autocapitalize="off"
                                                     autocorrect="off"
-                                                    maxlength="75"
+                                                    maxlength="6"
                                                     name="code"
                                                     id="security_code"
                                                     type="text"
                                                     class="_2hvTZ pexuQ zyHYP"
                                                     value=""
+                                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                                             /></label>
                                             <div class="i24fI"></div>
                                         </div>
